@@ -7,10 +7,10 @@ Under the hood, the plugin uses [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) f
 ## Installation
 
 ### NPM
-`npm i objection-password`
+`npm i objection-password-bcrypt-nodejs`
 
 ### Yarn
-`yarn add objection-password`
+`yarn add objection-password-bcrypt-nodejs`
 
 ## Usage
 
