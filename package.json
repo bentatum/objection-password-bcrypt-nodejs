@@ -1,6 +1,6 @@
 {
-  "name": "objection-password",
-  "version": "2.0.0",
+  "name": "objection-password-bcrypt-nodejs",
+  "version": "1.0.0",
   "description": "Automatic bcrypt hashing for Objection.js",
   "main": "index.js",
   "scripts": {
@@ -10,20 +10,20 @@
     "type": "git",
     "url": "git+https://github.com/scoutforpets/objection-password.git"
   },
-  "author": "James Dixon <jim.w.dixon@gmail.com>",
+  "author": "Ben Tatum <mail@benjtatum.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/scoutforpets/objection-password/issues"
+    "url": "https://github.com/bentatum/objection-password-bcrypt-nodejs/issues"
   },
-  "homepage": "https://github.com/scoutforpets/objection-password#readme",
-  "dependencies": {
-    "bcrypt": "^3.0.0"
-  },
+  "homepage": "https://github.com/bentatum/objection-password-bcrypt-nodejs#readme",
   "devDependencies": {
     "ava": "^0.25.0",
     "knex": "^0.14.4",
     "objection": "^1.0.0",
     "sqlite3": "^4.0.0",
     "standard": "^12.0.1"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3"
   }
 }

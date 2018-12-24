@@ -1,6 +1,6 @@
 'use strict'
 
-const Bcrypt = require('bcrypt')
+const Bcrypt = require('bcrypt-nodejs')
 
 const RECOMMENDED_ROUNDS = 12
 
@@ -46,7 +46,7 @@ module.exports = (options) => {
              * @return {Promise.<Boolean>}            whether or not the password was verified
              */
       verifyPassword (password) {
-        return Bcrypt.compare(password, this[options.passwordField])
+        return Bcrypt.compareSync(password, this[options.passwordField])
       }
 
       /**
@@ -61,7 +61,12 @@ module.exports = (options) => {
             throw new Error('bcrypt tried to hash another bcrypt hash')
           }
 
-          return Bcrypt.hash(password, options.rounds).then((hash) => {
+          const salt = Bcrypt.genSaltSync(options.rounds)
+
+          return Bcrypt.hash(password, salt, null, (error, hash) => {
+            if (error) {
+                throw new Error('There was an error while hashing.')
+            }
             this[options.passwordField] = hash
           })
         }
